@@ -3,6 +3,8 @@
 2 : SELECT * FROM courses WHERE `cfu` > 10;
 
 3 : SELECT * FROM students WHERE YEAR(date_of_birth) < 1993;
+   
+    SELECT * FROM students WHERE `date_of_birth` < '1993-10-17'; <----this one its more precise
 
 4 : SELECT * FROM courses WHERE `year` = 1 AND `period` = 'I semestre';
 
