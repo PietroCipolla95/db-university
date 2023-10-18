@@ -10,6 +10,6 @@
 
 6 : SELECT * FROM `degrees` WHERE `level` = 'magistrale';
 
-7 : SELECT * FROM `departments`;
+7 : SELECT * COUNT(*) as tot_departments FROM `departments`;
 
-8 : SELECT * FROM `teachers` WHERE `phone` IS NULL;
+8 : SELECT * COUNT(*) as teachers_whithout_phone from `teachers` WHERE `phone` is null;
