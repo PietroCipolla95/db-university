@@ -120,12 +120,13 @@ WHERE `departments`.`name` = 'Dipartimento di Matematica';
 
 ```sql
 
-SELECT `students`.`name`, `students`.`surname`, `courses`.`name` AS course, `exam_student`.`vote`
+SELECT COUNT(`exam_student`.`exam_id`) AS exam_count, `students`.`name`, `students`.`surname`, `courses`.`name` AS course
 FROM `exam_student`
 JOIN `students` ON `students`.`id` = `exam_student`.`student_id`
 JOIN `exams` ON `exams`.`id` = `exam_student`.`exam_id`
 JOIN `courses` ON `courses`.`id` = `exams`.`course_id`
-ORDER BY `students`.`name` ASC, `students`.`surname` ASC;
+WHERE `exam_student`.`vote` >= 18
+GROUP BY `students`.`name`, `students`.`surname`, course;
 
 ```
 
